@@ -11,14 +11,7 @@ export const getPokemons = () => dispatch => {
         return response.json()
     }).then(data => {
         return dispatch(setPokemons(data))
-    })
-    .catch(err => {
+    }).catch(err => {
         console.error(err)
     })
-    
-    /* .then(data => {
-        return fetch(data.url)
-    }).then(response => {
-        return dispatch(response.json())
-    }). */
 }
