@@ -1,10 +1,13 @@
 import '../styles/App.css';
+import SearchBox from './Organisms/SearchBox'
+import PokemonGrid from './Organisms/PokemonGrid'
 
 function App() {
   return (
-    <div className="App">
-      <h1>Testing...</h1>
-    </div>
+    <main className="App">
+      <SearchBox></SearchBox>
+      <PokemonGrid></PokemonGrid>
+    </main>
   );
 }
 
