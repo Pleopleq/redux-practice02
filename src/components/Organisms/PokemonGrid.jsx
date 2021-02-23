@@ -3,13 +3,13 @@ import PokemonCard from '../Molecules/PokemonCard'
 
 const PokemonGrid = () => {
     return (
-        <div>
+        <section>
             {/* MAP DE POKEMON CARD */}
             <PokemonCard></PokemonCard>
             <PokemonCard></PokemonCard>
             <PokemonCard></PokemonCard>
             <PokemonCard></PokemonCard>
-        </div>
+        </section>
     )
 }
 
