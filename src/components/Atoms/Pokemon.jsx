@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Pokemon = () => {
+const Pokemon = ({ name, link }) => {
     return (
         <>
-        <h1>Pokemon Name</h1>
+        <h1>{name}</h1>
         <div>
-            <p>Sprites</p>
+            <a href={link}>{link}</a>
         </div>
         </>
     )

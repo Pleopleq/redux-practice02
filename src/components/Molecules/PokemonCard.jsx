@@ -1,10 +1,10 @@
 import React from 'react'
 import Pokemon from '../Atoms/Pokemon'
 
-const PokemonCard = () => {
+const PokemonCard = ({ name, link, index}) => {
     return (
-        <div>
-            <Pokemon></Pokemon>
+        <div key ={index}>
+            <Pokemon name={name} link={link}></Pokemon>
         </div>
     )
 }
