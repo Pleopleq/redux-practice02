@@ -1,9 +1,15 @@
 import React from 'react'
 
-const SearchInput = () => {
+const SearchInput = ({ setPokeName, pokeName}) => {
     return (
         <label htmlFor="Pokemon">Pokemon Name:
-        <input type="text" placeholder="Pokemon Name"></input>
+        <input 
+        type="text" 
+        placeholder="Pokemon Name"
+        value={pokeName}
+        onChange={(e) => setPokeName(e.target.value)}
+        name="pokemonName">       
+        </input>
         </label>
     )
 }

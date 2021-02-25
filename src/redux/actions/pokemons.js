@@ -1,17 +1,28 @@
-import { FETCH_POKEMONS } from './type'
+import { FETCH_POKEMON_REQUEST, FETCH_POKEMON_SUCESS, FETCH_POKEMON_FAILURE } from './type'
 
-export const setPokemons = (pokemons) => ({
-    type: FETCH_POKEMONS,
-    payload: pokemons
+export const fetchPokemonRequest = () => ({
+    type: FETCH_POKEMON_REQUEST
 })
 
-export const getPokemons = () => dispatch => {
-    fetch('https://pokeapi.co/api/v2/pokemon')
+export const fetchPokemonSuccess = (pokemon) => ({
+    type: FETCH_POKEMON_SUCESS,
+    payload: pokemon
+})
+
+export const fetchPokemonFailure = (error) => ({
+    type: FETCH_POKEMON_FAILURE,
+    payload: error
+})
+
+
+export const getPokemons = (value) => dispatch => {
+    dispatch(fetchPokemonRequest())
+    fetch(`https://pokeapi.co/api/v2/pokemon/${value}`)
     .then(response => {
         return response.json()
-    }).then(data => {
-        return dispatch(setPokemons(data))
+    }).then ((data) => {
+        dispatch(fetchPokemonSuccess([data]))
     }).catch(err => {
-        console.error(err)
+        dispatch(fetchPokemonFailure('Not found'))
     })
 }
